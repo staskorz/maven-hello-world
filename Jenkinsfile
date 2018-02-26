@@ -21,7 +21,7 @@ pipeline {
 
     post {
         success {
-            archiveArtifacts artifacts: 'my-app/target/*.jar', fingerprint: true
+            archiveArtifacts artifacts: 'my-app/target/my-app*.jar', fingerprint: true
         }
 
         always {
