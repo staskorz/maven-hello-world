@@ -20,6 +20,10 @@ pipeline {
     }
 
     post {
+        success {
+            archiveArtifacts artifacts: 'my-app/target/*.jar', fingerprint: true
+        }
+
         always {
             mail(
                 to: "${env.NOTIFY_EMAIL}",
