@@ -5,7 +5,15 @@ pipeline {
         stage('Clean') {
             steps {
                 dir('my-app') {
-                    mvn clean
+                    sh "mvn clean"
+                }
+            }
+        }
+
+        stage('Package') {
+            steps {
+                dir('my-app') {
+                    sh "mvn package"
                 }
             }
         }
